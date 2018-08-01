@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <h3 class="titulo-lista">Proyectos</h3>
+  <form action="">
+    <div class=" field filtro">
+      <input type="text" name="inputBuscarProyecto" id="inputBuscarProyecto" placeholder="Busqueda">
+      <label for="inputBuscarProyecto">
+        <i class="fas fa-search"></i> Búsqueda</label>
+    </div>
+  </form>
+  <a href="#" class="buttonDash" onclick="obtenerPagina ('proyecto/proyecto_registrar.html')"> Registrar proyecto
+    <i class="fas fa-user-tie"></i>
+  </a>
+  <div class="wrapper-listar">
+    <table id="tblProyectos">
+      <thead class="encabezados">
+        <th>Código</th>
+        <th>Cliente</th>
+        <th>Nombre</th>
+        <th>Profesor líder</th>
+        <th>Estudiante coordinador</th>
+        <th>Estado</th>
+        <th>Fecha de entrega</th>
+        <th>Acciones</th>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    initProyecto();
+    ListarProyectos();
+  });
+</script>

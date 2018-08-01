@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <h3 class="titulo-lista">Estudiantes</h3>
+  <main>
+    <form action="">
+      <div class=" field filtro">
+        <input type="text" name="txtFiltro" id="txtFiltro" placeholder="Digite el criterio de busqueda">
+        <label for="txtFiltro">
+          <i class="fas fa-search"></i> Buscar</label>
+      </div>
+    </form>
+
+    <a href="#" class="buttonDash" onclick="obtenerPagina ('estudiante/indexRegEstud.html')"> Registar Estudiante
+      <i class="fas fa-user-plus"></i>
+    </a>
+    <table id="tblEstud">
+      <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Teléfono</th>
+        <th>Correo electrónico</th>
+        <th>Cédula</th>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </main>
+</div>
+
+<script>
+
+  $(document).ready(function () {
+    EstudiantesInit();
+    imprimirListaEstud();
+  });
+
+</script>

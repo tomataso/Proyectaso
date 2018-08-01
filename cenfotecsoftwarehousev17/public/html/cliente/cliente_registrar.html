@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <h3 class="titulo-lista">Registro de cliente</h3>
+
+  <form id="FormularioCliente">
+    <div class="field">
+      <input type="text" placeholder="Nombre de la empresa" id="txtNombre">
+      <label for="txtNombre">Nombre de empresa</label>
+    </div>
+
+    <div class="field">
+      <input type="number" placeholder="Cedula Juridica" id="txtCedula">
+      <label for="txtCedula">Cedula Juridica</label>
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Provincia" id="txtProvincia">
+      <label for="txtProvincia">Provincia</label>
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Canton" id="txtCanton">
+      <label for="txtCanton">Canton</label>
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Distrito" id="txtDistrito">
+      <label for="txtDistrito">Distrito</label>
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Ubicacion" id="txtUbicacion">
+      <label for="txtUbicacion">Ubicacion</label>
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Primer Nombre de contacto" id="txtPrimerNombre">
+      <label for="txtPrimerNombre">Primer Nombre de contacto</label>
+    </div>
+
+    <div class="field">
+      <input type="text" placeholder="Primer Apellido de contacto" id="txtPrimerApellido">
+      <label for="txtPrimerApellido">Primer Apellido de contacto</label>
+    </div>
+
+    <div class="field">
+      <input type="number" placeholder="Telefono de contacto" id="txtTelefono">
+      <label for="txtTelefono">Telefono de Contacto</label>
+    </div>
+
+    <div class="field">
+      <input type="tel" name="txtCorreo" id="txtCorreo" placeholder="Correo de contacto">
+      <label for="txtCorreo">Correo de contacto</label>
+    </div>
+    <button type="button" id="btnRegistrarCliente" class="btn-registrar">Registrar</button>
+  </form>
+</div>
+<script>
+    $(document).ready(function () {
+      ClienteRegistrarInit();
+    });
+</script>

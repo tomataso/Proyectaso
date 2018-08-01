@@ -1,0 +1,76 @@
+<div class="wrapper">
+  <main>
+      <h3 class="titulo-lista">Registro de Estudiantes</h3>
+    <form action="">
+      <div class="field">
+        <input type="text" name="txtNombre" id="txtNombre" placeholder="Primer nombre">
+        <label for="txtNombre">Primer nombre</label>
+      </div>
+      <div class="field">
+        <input type="text" name="txtApellido" id="txtApellido" placeholder="Primer apellido">
+        <label for="txtApellido">Primer apellido</label>
+      </div>
+      <div class="field">
+        <input type="text" name="txtDireccion" id="txtDireccion" placeholder="Dirección">
+        <label for="txtDireccion">Dirección</label>
+      </div>
+      <div class="field">
+        <input type="tel" name="txtTelefono" id="txtTelefono" placeholder="+506-8888-8888">
+        <label for="txtTelefono">Teléfono</label>
+      </div>
+      <div class="field">
+        <input type="email" name="txtEmail" id="txtEmail" placeholder="mcorralese@example.com">
+        <label for="txtEmail">Correo electrónico</label>
+      </div>
+      <div class="field">
+        <input type="number" name="txtCedula" id="txtCedula" placeholder="Cédula">
+        <label for="txtCedula">Cédula</label>
+      </div>
+      <div class="field">
+        <input type="text" name="txtCarrera" id="txtCarrera" placeholder="Carrera">
+        <label for="txtCarrera">Carrera</label>
+      </div>
+      <div class="field">
+        <input type="text" name="txtMateriasAprob" id="txtMateriasAprob" placeholder="Materias aprobadas">
+        <label for="txtMateriasAprob">Materias aprobadas</label>
+      </div>
+      <div class="field">
+        <input type="text" name="txtContactEmergNombre" id="txtContactEmergNombre" placeholder="Primer nombre contacto de Emergencia">
+        <label for="txtContactEmergNombre">Primer nombre contacto de Emergencia</label>
+      </div>
+      <div class="field">
+        <input type="text" name="txtContactEmergApellido" id="txtContactEmergApellido" placeholder="Primer nombre contacto de Emergencia">
+        <label for="txtContactEmergApellido">Primer apellido contacto de Emergencia</label>
+      </div>
+      <div class="field">
+        <input type="tel" name="txtContactEmergTelefono" id="txtContactEmergTelefono" placeholder="+506-8888-8888">
+        <label for="txtContactEmergTelefono">Teléfono contacto de Emergencia</label>
+      </div>
+      <button type="button" id="btnRegEstud">Registrar</button>
+    </form>
+    <table id="tblEstud" class="ocultar">
+      <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Correo electrónico</th>
+        <th>Cédula</th>
+        <th>Carrera</th>
+        <th>Materias</th>
+        <th>Nombre de emergencia</th>
+        <th>Apellido de emergencia</th>
+        <th>Teléfono de emergencia</th>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </main>
+</div>
+
+<script>
+  $(document).ready(function () {
+    EstudiantesInit();
+  });
+</script>

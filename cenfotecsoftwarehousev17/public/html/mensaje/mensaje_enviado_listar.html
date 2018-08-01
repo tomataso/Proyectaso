@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<!--  MODIFICADO 14/7/2018 AGREGAR VERSION. -->
+<html lang="es">
+  <head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="../../css/generales/reset.css">
+    <link rel="stylesheet" href="../../css/generales/generales.css">
+    <link rel="stylesheet" href="../../css/listas/tabla_general.css">
+  </head>
+  <body>
+    <div class="wrapper-header">
+      <input type="text" name="txtFiltro" id="inputBusqueda" class="barraBusqueda" placeholder="Buscar Mensaje">
+    </div>
+    <div class="wrapper-listar">
+      <table id="tblMensajesEnviados">
+        <thead class="encabezados">
+            <th>Fecha</th>
+            <th>Usuario</th>
+            <th>Asunto</th>
+       
+
+        </thead>
+        <tbody>
+            
+        </tbody>
+      </table>
+    </div>
+    <script src="../../js/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="../../js/mensaje/controlador_mensaje_enviado_listar.js"></script>
+    <script src="../../js/mensaje/servicio_mensaje_enviado_listar.js"></script>
+  </body>
+</html>

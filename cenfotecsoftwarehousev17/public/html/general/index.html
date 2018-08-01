@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+	crossorigin="anonymous">
+	<link href='../../img/CSHLogo.png' rel='shortcut icon' type='image/png'>
+	<link rel="stylesheet" href="../../css/generales/reset.css">
+	<link rel="stylesheet" href="../../css/generales/generales.css">
+	<link rel="stylesheet" href="../../css/listas/tabla_general.css">
+	<link rel="stylesheet" href="../../css/formularios/formularios_general.css">
+	<title>Cenfotec Software House</title>
+</head>
+<header>
+	<div class="contactenosHeader">
+		<div>
+			<a href="index.html">
+				<img src="../../img/CSHLogo.png" alt="Cenfotec Software House Logo">
+			</a>
+		</div>
+		<a href="../fichatecnica/ficha_tecnica.html" class="nav-header">Nosotros</a>
+		<a href="index.html"><i class="fas fa-home nav-header"></i></a>	
+		<a href="#" class="nav-header" id="btnIngresar" onclick="obtenerPagina ('general/iniciar_sesion.html') & moverContenedorPricipal()"><i class="fas fa-sign-in-alt"></i> Ingresar</a>
+
+		<!-- <a href="#" class="" id="btnIngresar" class="ocultar nav-header" onclick="obtenerPagina ('general/iniciar_sesion.html') & moverContenedorPricipal()"><i class="fas fa-sign-in-alt"></i> Ingresar</a> -->
+
+		<a href="index.html" id="btnSalir" class="ocultar nav-header">Salir <i class="fas fa-sign-out-alt"></i></a>
+
+
+
+	</div>
+</header>
+
+<body>
+
+	<div class="wrapper">
+		<div class="menuCont">
+			<input type="checkbox" id="check" onclick="">
+			<label for="check" id="icone"><i class="fas fa-bars"></i></label>
+			<!-- <div class="negro">
+				<label for="check" id="icone"><i class="fas fa-bars"></i></label>
+			</div> -->
+			<!-- <div class="blanco">
+				<label for="check" id="icone"><i class="fas fa-bars blanco"></i></label>
+			</div> -->
+			<div class="bars">
+				<nav>
+					<!-- <a href="#" class="" id="btnIngresar" class="ocultar" onclick="obtenerPagina ('general/iniciar_sesion.html')"><div class="link"><i class="fas fa-sign-in-alt"></i>  Ingresar</div></a>
+
+					<a href="index.html" id="btnSalir" class="ocultar"><div class="link">Salir <i class="fas fa-sign-out-alt"></i></div></a> -->
+
+					<a href="#" id="btnEstudiantes" class="ocultar" onclick="obtenerPagina ('estudiante/indexTablaEstud.html') & moverContenedorPricipal()"><div class="link">Estudiantes</div></a>
+
+					<a href="#" class="ocultar" id="btnCliente" onclick="obtenerPagina ('cliente/cliente_listar.html') & moverContenedorPricipal()"><div class="link">Clientes</div></a>
+
+					<a href="#" class="ocultar" id="btnProfesor" onclick="obtenerPagina ('profesor/profesor_listar.html') & moverContenedorPricipal()"><div class="link">Profesores</div></a>
+
+					<a href="#" class="ocultar" id="btnProyectos" onclick="obtenerPagina ('proyecto/proyecto_listar.html') & moverContenedorPricipal()"><div class="link">Proyectos </div></a>
+
+				</nav>
+			</div>
+		</div>
+
+		<div class="main">
+			<div id="contenedorPrincipal" class="CPpositionOn">
+
+				<div class="wrapper"> 
+					<div class="tituloPrincipal">
+						<h1><span>CENFOTEC</span>SOFTWARE HOUSE</h1>
+						<p class="slogan">Su casa para recibir servicios profesionales en tecnologías de información, de gran calidad, diseñados y construidos por estudiantes y profesores de la <strong class="strong">Universidad Cenfotec</strong> para la comunidad.</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+
+		<!-- <div>
+		<button type="button" id="btnIngresar">Registrar</button>
+		<button type="button" id="btnSalir">Actualizar</button>
+		</div> -->
+		<!-- <footer>
+		<nav class="redesSociales">
+		<a href="">
+		<i class="fab fa-facebook-f"></i>
+		</a>
+		<a href="">
+		<i class="fab fa-twitter"></i>
+		</a>
+		<a href="">
+		<i class="fab fa-instagram"></i>
+		</a>
+		<a href="">
+		<i class="fab fa-youtube"></i>
+		</a>
+		<a href="">
+		<i class="fab fa-pinterest"></i>
+		</a>
+		</nav>
+		<span class="copyright">
+		Copyright © 2017-2018 - All Rights Reserved -
+		</span>
+		<span class="">
+		Codec Devs
+		</span>
+		</footer> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.5/sweetalert2.all.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+		<script src="../../js/jquery-3.3.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+
+		<!-- para el sistema -->
+		<script src="../../js/sistema/servicio_sistema_registrar.js"></script>
+		<script src="../../js/general/controlador_landing.js"></script>
+
+		<!-- para Inicio sesión -->
+		<script src="../../js/inicioSesion/login.service.js"></script>
+		<script src="../../js/inicioSesion/auth.service.js"></script>
+		<script src="../../js/inicioSesion/login.controller.js"></script>
+
+		<!-- para estudiante -->
+		<script src="../../js/estudiante/servicioRegEstud.js"></script>  
+		<script src="../../js/estudiante/controladorRegEstud.js"></script>
+
+		<!-- para cliente -->
+		<script src="../../js/cliente/servicio_cliente_listar.js"></script>
+		<script src="../../js/cliente/controlador_cliente_listar.js"></script>
+
+		<script src="../../js/cliente/servicio_cliente_registrar.js"></script>
+		<script src="../../js/cliente/controlador_cliente_registrar.js"></script>
+
+		<!-- del proyecto -->
+		<script src="../../js/proyecto/servicio_proyecto_listar.js"></script>
+		<script src="../../js/proyecto/controlador_proyecto_listar.js"></script>
+
+		<script src="../../js/proyecto/servicio_proyecto_registrar.js"></script>
+		<script src="../../js/proyecto/controlador_proyecto_registrar.js"></script>
+
+		<!-- del profesor -->
+		<script src="../../js/profesor/servicio_profesor_listar.js"></script>
+		<script src="../../js/profesor/controlador_profesor_listar.js"></script>
+
+		<script src="../../js/profesor/servicio_profesor_registrar.js"></script>
+		<script src="../../js/profesor/controlador_profesor_registrar.js"></script>
+
+
+		<script>
+			jQuery(document).ready(function(){ 
+			           
+			    $('.blanco .negro').click(function(){
+			      $(this).toggleClass("blanco Negro")    
+			});}); 
+		</script>
+
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!--  MODIFICADO 14/7/2018 AGREGAR VERSION. -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="../../css/generales/reset.css">
+    <link rel="stylesheet" href="../../css/generales/generales.css">
+    <link rel="stylesheet" href="../../css/formularios/formularios_general.css">
+  </head>
+  <body>
+    <div class="wrapper-formulario">
+        <form>
+            <h3>Parámetros Generales:</h3>
+
+
+        
+            
+            <div class="field">
+              <input type="text" name="Periodo" id="Periodo" placeholder="Período">
+              <label for="Periodo">Período:</label>
+            </div>
+
+            <div class="field">
+              <input type="number" id="MaxHorasxCuatri" placeholder="Máximo de horas por cuatrimestre"></input>
+              <label for="MaxHorasxCuatri">Máximo de horas por cuatrimestre</label>
+            </div>
+         
+            <div class="field">
+              <input type="number" id="PorcentajeBecaxHoraTrabajada" placeholder="Porcentaje de beca por hora trabajada"></input>
+              <label for="PorcentajeBecaxHoraTrabajada">Porcentaje de beca por hora trabajada</label>
+            </div>
+
+
+            <button type="button" id="btnGuardar" class="btn-guardar">Guardar</button> 
+           
+        </form>
+
+
+    </div>
+    <script src="../../js/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="../../js/sistema/controlador_sistema_registrar.js"></script>
+    <script src="../../js/sistema/servicio_sistema_registrar.js"></script>
+  </body>
+</html>

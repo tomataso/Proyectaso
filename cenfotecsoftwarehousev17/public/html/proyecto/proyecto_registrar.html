@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <h3 class="titulo-lista">Registro de proyecto</h3>
+
+  <div class="field">
+    <input type="number" id="codigoProyecto" placeholder="Código"></input>
+    <label for="codigoProyecto">Código</label>
+  </div>
+
+  <div class="field">
+    <input type="text" id="fechaProyecto" placeholder="Fecha de creación"></input>
+    <label for="fechaProyecto">Fecha de creación</label>
+  </div>
+
+  <div class="field">
+    <select id="clienteProyecto"></select>
+    <label for="clienteProyecto">Cliente</label>
+  </div>
+
+  <div class="field">
+    <input type="text" id="nombreProyecto" placeholder="Nombre de proyecto">
+    <label for="nombreProyecto">Nombre de proyecto</label>
+  </div>
+
+  <div class="field">
+    <textarea id="descripcionProyecto" rows="5" placeholder="Descripción"></textarea>
+    <label for="descripcionProyecto">Descripción</label>
+  </div>
+
+  <div class="field">
+    <input id="estadoProyecto"></input>
+    <label for="estadoProyecto">Estado</label>
+  </div>
+
+  <div class="field">
+    <input type="date" id="fechaEntrega" placeholder="Fecha de entrega">
+    <label for="fechaEntrega">Fecha de entrega</label>
+  </div>
+
+  <!-- <h3>Profesores:</h3> -->
+
+  <div class="field">
+    <select id="profesorLider"></select>
+    <label for="profesorLider">Profesor líder</label>
+  </div>
+
+  <div class="field">
+    <select id="profesorTecnico"></select>
+    <label for="profesorTecnico">Profesor técnico</label>
+  </div>
+
+  <button type="button" id="btnGuardarProyecto" class="btn-registrar">Guardar</button>
+</div>
+<script>
+    $(document).ready(function () {
+      ProyectoRegistrarInit();
+    });
+</script>
+

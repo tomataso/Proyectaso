@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <h3 class="titulo-lista">Clientes</h3>
+  <form action="">
+    <div class=" field filtro">
+      <input type="text" name="inputBuscarCliente" id="inputBuscarCliente" placeholder="Busqueda">
+      <label for="inputBuscarCliente">
+        <i class="fas fa-search"></i> Búsqueda</label>
+    </div>
+  </form>
+  <a href="#" class="buttonDash" onclick="obtenerPagina ('cliente/cliente_registrar.html')"> Registrar Cliente
+    <i class="fas fa-user-tie"></i>
+  </a>
+  <table id="tblClientes">
+    <thead class="encabezados">
+      <th>Empresa</th>
+      <th>Nombre de Contacto</th>
+      <th>Telefono de Contacto</th>
+      <th>Correo Contacto</th>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<script>
+  $(document).ready(function () {
+    initClientes();
+    ListarClientes();
+  });
+</script>

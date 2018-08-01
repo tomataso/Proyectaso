@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <h3 class="titulo-lista">Profesores</h3>
+  <form action="">
+    <div class=" field filtro">
+      <input type="text" name="inputBuscarProfesor" id="inputBuscarProfesor" placeholder="Busqueda">
+      <label for="inputBuscarProfesor">
+        <i class="fas fa-search"></i> Búsqueda</label>
+    </div>
+  </form>
+  <a href="#" class="buttonDash" onclick="obtenerPagina ('profesor/profesor_registrar.html')"> Registrar profesor
+    <i class="fas fa-user-tie"></i>
+  </a>
+  <div class="wrapper-listar">
+    <table id="tblProfesores">
+      <thead class="encabezados">
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cedúla</th>
+        <th>Teléfono</th>
+        <th>Correo</th>
+        <th>Tipo de Profesor</th>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    initProfesor();
+    ListarProfesores();
+  });
+</script>
