@@ -5,6 +5,7 @@ let botonEstudiante;
 let botonCliente;
 let botonProfesor;
 let botonProyectos;
+let botonTiquete;
 
 function inicioSesionInit () {
 
@@ -24,6 +25,7 @@ function inicioSesionInit () {
     botonCliente = document.querySelector('#btnCliente');
     botonProfesor = document.querySelector('#btnProfesor');
     botonProyectos = document.querySelector('#btnProyectos');
+    botonTiquete = document.querySelector('#btnTiquetes');
 
 }
 
@@ -67,6 +69,7 @@ function redireccionarUsuario() {
             botonCliente.classList.remove('ocultar');
             botonProfesor.classList.remove('ocultar');
             botonProyectos.classList.remove('ocultar');
+            botonTiquete.classList.add('ocultar');
             break;
         case 1:
             // acciones de profesor
@@ -77,26 +80,33 @@ function redireccionarUsuario() {
             botonCliente.classList.add('ocultar');
             botonProfesor.classList.remove('ocultar');
             botonProyectos.classList.add('ocultar');
+            botonTiquete.classList.add('ocultar');
             break;
         case 2:
-            // acciones de estudiante
-            obtenerPagina('estudiante/indexTablaEstud.html'),
-            // botonIngresarUsuario.classList.add('ocultar');  
-            // botonSalirUsuario.classList.remove('ocultar'); 
-            botonEstudiante.classList.remove('ocultar');
-            botonCliente.classList.add('ocultar');
-            botonProfesor.classList.add('ocultar');
-            botonProyectos.classList.add('ocultar');
-            break;  
-        case 3:
-            // acciones de cliente
-            obtenerPagina('cliente/cliente_listar.html'),
+        // acciones de cliente
+        obtenerPagina('cliente/cliente_listar.html'),
             // botonIngresarUsuario.classList.add('ocultar');  
             // botonSalirUsuario.classList.remove('ocultar'); 
             botonEstudiante.classList.add('ocultar');
             botonCliente.classList.remove('ocultar');
             botonProfesor.classList.add('ocultar');
             botonProyectos.classList.add('ocultar');
+            botonTiquete.classList.remove('ocultar');
+            
+            break;  
+        case 3:            
+        // acciones de estudiante
+        obtenerPagina('estudiante/indexTablaEstud.html'),
+        // botonIngresarUsuario.classList.add('ocultar');  
+        // botonSalirUsuario.classList.remove('ocultar'); 
+        botonEstudiante.classList.remove('ocultar');
+        botonCliente.classList.add('ocultar');
+        botonProfesor.classList.add('ocultar');
+        botonProyectos.classList.add('ocultar');
+        botonTiquete.classList.add('ocultar');
+
+
+            
             break;                                       
         default:
             break;

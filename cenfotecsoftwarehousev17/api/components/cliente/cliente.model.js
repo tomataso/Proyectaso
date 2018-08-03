@@ -7,14 +7,14 @@ let ClienteSchema = new mongoose.Schema({
     Provincia : {type : String, required: true},
     Canton : {type : String, required: true},
     Distrito : {type : String, required: true},
-    Ubicacion : {type : String, required: true},
     PrimerNombre : {type : String, required: true},
     PrimerApellido : {type : String, required : true},
     Telefono : {type : String, required : true},
     Correo : {type : String, required : true},
-    Desactivado : {type: Boolean,required: true},
     Contrasenna : {type: String, required: true},
-    TipoUsuario: {type: Number, required: true}
+    TipoUsuario: {type: Number, required: true},
+    Ubicacion : {type : String, required: true},
+    Desactivado : {type: Boolean,required: true}
 });
 
 module.exports = mongoose.model('Cliente', ClienteSchema);

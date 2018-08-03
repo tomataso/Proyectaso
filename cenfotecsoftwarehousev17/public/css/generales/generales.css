@@ -9,6 +9,9 @@ html {
     font-family: tahoma;
     color: #fbb803;
 }
+.buttonContainer {
+  margin-top: 300px;
+}
 #contenedorPrincipal{
   /* background-color: #fff; */
   min-height: 1200px;

@@ -5,12 +5,16 @@ let inputCedulaCliente;
 let inputProvincia;
 let inputCanton;
 let inputDistrito;
-let inputUbicacion;
 let inputPrimerNombre;
 let inputPrimerApellido;
 let inputTelefonoCliente;
 let inputCorreo;
+let inputUbicacion;
 let desactivar;
+
+// quitar esta funcion 
+ClienteRegistrarInit();
+
 
 function ClienteRegistrarInit () {
 let botonRegistrar = document.querySelector('#btnRegistrarCliente');
@@ -24,11 +28,11 @@ inputCedulaCliente = document.querySelector('#txtCedula');
 inputProvincia = document.querySelector('#txtProvincia');
 inputCanton = document.querySelector('#txtCanton');
 inputDistrito = document.querySelector('#txtDistrito');
-inputUbicacion = document.querySelector('#txtUbicacion');
 inputPrimerNombre = document.querySelector('#txtPrimerNombre');
 inputPrimerApellido = document.querySelector('#txtPrimerApellido');
 inputTelefonoCliente = document.querySelector('#txtTelefono');
 inputCorreo = document.querySelector('#txtCorreo');
+// inputUbicacion = marker.getPosition().lat() + ',' + marker.getPosition().lng();
 desactivar = false;
 }
 //funciones Obtener datos, filtar lista clientes, imprimir lista clientes, limpiar formulario
@@ -41,13 +45,13 @@ function obtenerDatosCliente(){
     let sProvincia = inputProvincia.value;
     let sCanton = inputCanton.value;
     let sDistrito = inputDistrito.value;
-    let sUbicacion = inputUbicacion.value;
     let sPrimerNombre = inputPrimerNombre.value;
     let sPrimerApellido = inputPrimerApellido.value;
     let sTelefono = Number(inputTelefonoCliente.value);
     let sCorreo = inputCorreo.value;
+    let sUbicacion = marker.getPosition().lat() + ',' + marker.getPosition().lng();
 
-    infoCliente.push(sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sUbicacion, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, desactivar);
+    infoCliente.push(sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
     
     bError = validar();
     if(bError == true){
@@ -118,13 +122,6 @@ function validar(){
     }else{
         inputCanton.classList.remove('error-input');
     }
-    //Validación de la Ubicacion
-    if(inputUbicacion.value == ''){
-        inputUbicacion.classList.add('error-input');
-        bError = true;
-    }else{
-        inputUbicacion.classList.remove('error-input');
-    }
     //Validación del NombreContacto
     if(inputPrimerNombre.value == '' ){
         inputPrimerNombre.classList.add('error-input');
@@ -165,11 +162,11 @@ function limpiarFormulario(){
     inputProvincia.value = '';
     inputCanton.value = '';
     inputDistrito.value = '';
-    inputUbicacion.value ='';
     inputPrimerNombre.value = '';
     inputPrimerApellido.value = '';
     inputTelefonoCliente.value = '';
     inputCorreo.value = '';
+    inputUbicacion.value ='';
 }
 
 //filtrar de gabriel

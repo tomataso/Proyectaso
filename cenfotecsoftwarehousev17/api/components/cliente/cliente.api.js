@@ -9,13 +9,13 @@ module.exports.registrar = function(req, res){
         Provincia : req.body.Provincia,
         Distrito : req.body.Distrito,
         Canton : req.body.Canton,
-        Ubicacion : req.body.Ubicacion,
         PrimerNombre : req.body.PrimerNombre,
         PrimerApellido : req.body.PrimerApellido,
         Telefono : req.body.Telefono,
         Correo : req.body.Correo,
         Desactivado : req.body.Desactivado,
         Contrasenna : req.body.Contrasenna,
+        Ubicacion : req.body.Ubicacion,
         TipoUsuario : 2
     });
 

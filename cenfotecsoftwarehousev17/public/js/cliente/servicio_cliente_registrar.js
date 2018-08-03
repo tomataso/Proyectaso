@@ -45,13 +45,13 @@ function registrarCliente(pCliente){
             Provincia : pCliente[2],
             Distrito : pCliente[3],
             Canton : pCliente[4],
-            Ubicacion : pCliente[5],
-            PrimerNombre : pCliente[6],
-            PrimerApellido : pCliente[7],
-            Telefono : pCliente[8],
-            Correo : pCliente[9],
-            Desactivado : pCliente[10], 
+            PrimerNombre : pCliente[5],
+            PrimerApellido : pCliente[6],
+            Telefono : pCliente[7],
+            Correo : pCliente[8],
+            Ubicacion : pCliente[9], 
             Contrasenna: contrasennaAutogenerada,
+            Desactivado : pCliente[10],
         }
       });
     
