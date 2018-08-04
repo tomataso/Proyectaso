@@ -25,16 +25,33 @@ function ListarClientes(){
             let celdaNombreContacto = fila.insertCell();
             let celdaTelefonoContacto = fila.insertCell();
             let celdaCorreoContacto = fila.insertCell();
+            let btns = fila.insertCell();
+
+            let btnVer = document.createElement('input');
+            btnVer.type = 'button';
+            btnVer.value = 'Ver';
+            btnVer.name = ListaCliente[i]['_id'];
+            btnVer.classList.add('fa-edit');
+            btnVer.addEventListener('click',ftnMostrarCliente);
 
             celdaNombreEmpresa.innerHTML = ListaCliente[i]['Nombre'];
             celdaNombreContacto.innerHTML = ListaCliente[i]['PrimerNombre'] + " " + ListaCliente[i]['PrimerApellido']  ;
             celdaTelefonoContacto.innerHTML = ListaCliente[i]['Telefono'];
             celdaCorreoContacto.innerHTML = ListaCliente[i]['Correo'];
+            btns.appendChild(btnVer);
 
         }
     }
 
 };
+
+
+function ftnMostrarCliente(){
+    let id = this.name;
+    window.location.replace('../../html/cliente/cliente_mostrar.html?id' + id);
+};
+
+
 
 function  ftnFiltrarListaClientes (){
 
