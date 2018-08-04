@@ -1,5 +1,5 @@
 'use strict';
-// MODIFICADO 13/7/2018 AGREGAR VERSION
+
 const express = require('express');
 const router = express.Router();
 const profesor = require('./profesor.api');
@@ -28,5 +28,17 @@ router.route('/desactivarProfesor')
     .post(function(req, res){
         profesor.desactivar(req, res);
 });
+
+
+router.route('/agregarTitulo')
+    .post(function (req, res) {
+        entrenador.agregarGradoAcademicoProfesor(req, res);
+    });
+
+    router.route('/agregarCursoI')
+    .post(function (req, res) {
+        entrenador.agregarCursosImpartidosProfesor(req, res);
+    });
+
 
 module.exports = router;

@@ -1,5 +1,13 @@
 <div class="wrapper">
       <h3 class="titulo-lista">Registro de profesor</h3>
+      
+
+      <!-- Se movio el Campo Cedula Arriba y se cambio a Type Number-->
+      <div class="field">
+                  <input type="number" id="txtCedulaProfesor" placeholder="Cedúla"></input>
+                  <label for="txtCedulaProfesor">Cedúla</label>
+      </div>
+      
       <div class="field">
             <input type="text" id="txtNombreProfesor" placeholder="Nombre"></input>
             <label for="txtNombreProfesor">Nombre</label>
@@ -10,18 +18,16 @@
             <label for="txtApellidoProfesor">Apellido</label>
       </div>
 
-      <div class="field">
-            <input type="text" id="txtCedulaProfesor" placeholder="Cedúla"></input>
-            <label for="txtCedulaProfesor">Cedúla</label>
-      </div>
+
 
       <div class="field">
             <input type="number" id="txtTelefonoProfesor" placeholder="Teléfono"></input>
             <label for="txtTelefonoProfesor">Teléfono</label>
       </div>
 
+       <!-- Se cambio Type de text a email-->
       <div class="field">
-            <input type="text" id="txtCorreoProfesor" placeholder="Correo Electronico"></input>
+            <input type="email" id="txtCorreoProfesor" placeholder="Correo Electronico"></input>
             <label for="txtCorreoProfesor">Correo Electronico</label>
       </div>
 
@@ -45,21 +51,27 @@
             <label for="txtDireccionExactaProfesor">Dirección Exacta</label>
       </div>
 
-      <div class="field">
-            <input type="text" id="txtGAcademico" placeholder="Grado Académico"></input>
-            <label for="txtGAcademico">Grado Académico</label>
-      </div>
+
 
       <div class="field">
             <input type="number" id="txtAexperiencia" placeholder="Años de Experiencia"></input>
             <label for="txtAexperiencia">Años de Experiencia</label>
       </div>
 
+<!-- 	Esto Se Registra en el Mostrar/Editar Perfil Profesor
+      <div class="field">
+                  <input type="text" id="txtGAcademico" placeholder="Grado Académico"></input>
+                  <label for="txtGAcademico">Grado Académico</label>
+      </div>
+
+
       <div class="field">
             <input type="text" id="txtCImpartidos" placeholder="Cursos Impartidos"></input>
             <label for="txtCImpartidos">Cursos Impartidos</label>
       </div>
+ -->
 
+ 
       <select id="txtTipoProfesor">
             <option value="ambos">Ambos</option>
             <option value="técnico">Técnico</option>

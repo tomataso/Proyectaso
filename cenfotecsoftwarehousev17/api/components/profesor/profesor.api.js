@@ -1,6 +1,5 @@
 'use strict';
-// MODIFICADO 13/7/2018 AGREGAR VERSION
-//para que se conecte a la base de datos de mongo, necesito de mongoose
+
 const ProfesorModel = require('./profesor.model');
 
 module.exports.registrar = function(req, res){
@@ -18,14 +17,16 @@ module.exports.registrar = function(req, res){
         Distrito :  req.body.Distrito,
         DireccionExacta : req.body.DireccionExacta,
 
-        GAcademico : req.body.GAcademico,
+       
         Aexperiencia :  req.body.Aexperiencia,
-        CImpartidos :  req.body.CImpartidos,
+       
 
         TipoProfesor : req.body.TipoProfesor,
         Desactivado : req.body.Desactivado,
         Contrasenna : req.body.Contrasenna,
-        TipoUsuario: 1
+        TipoUsuario: 1,
+
+        FotoPerfilProfesor: req.body.FotoPerfilProfesor,
 
         
     });
@@ -70,4 +71,55 @@ module.exports.buscarProfesor = function(req, res){
         function(profesor){
             res.send(profesor);
         });
+};
+
+
+module.exports.agregarGradoAcademicoProfesor = function (req, res) {
+
+    ProfesorModel.update(
+        { _id: req.body._id },
+        {
+            $push:
+            {
+                'GAcademico':
+                {
+                    codigoTituloAcademico :  req.body.codigoTituloAcademico,
+                    nombreTituloAcademico: req.body.nombreTituloAcademico
+
+                }
+            }
+        },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo asociar el grado academico al profesor, ocurrió el siguiente error' + error });
+            } else {
+                res.json({ success: true, msg: 'El grado academico se registró con éxito en el profesor.' });
+            }
+        }
+    )
+};
+
+module.exports.agregarCursosImpartidosProfesor = function (req, res) {
+
+    ProfesorModel.update(
+        { _id: req.body._id },
+        {
+            $push:
+            {
+                'CImpartidos':
+                {
+                    codigoCursoI :  req.body.codigoCursoI,
+                    nombreCursoI: req.body.nombreCursoI
+
+                }
+            }
+        },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo asociar el curso al profesor, ocurrió el siguiente error' + error });
+            } else {
+                res.json({ success: true, msg: 'El curso impartido se registró con éxito en el profesor.' });
+            }
+        }
+    )
 };

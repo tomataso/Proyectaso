@@ -1,0 +1,51 @@
+<div class="wrapper">
+
+
+    <h3 class="titulo-lista">Títulos</h3>
+
+    <form action="">
+      <div class=" field filtro">
+        <input type="text" name="inputBusqueda" id="inputBusqueda" placeholder="Busqueda">
+        <label for="inputBusqueda"><i class="fas fa-search"></i>  Búsqueda</label>
+      </div>
+    </form>
+
+    <div class="wrapper-listar estudproy">
+      <table id="tblTitulos">
+        <thead class="encabezados">
+            <th>Codigo</th>
+            <th>Títulos</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3 class="titulo-lista">Títulos Del Profesor</h3>
+    
+    <div class="wrapper-listar estudproy">
+      
+
+      
+      <table id="tblEstudiantesAsignados">
+        <thead class="encabezados">
+            <th>Codigo</th>
+            <th>Títulos</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script>
+      $(document).ready(function () {
+        ProfesorAsignarTituloInit ();
+      });
+  </script>

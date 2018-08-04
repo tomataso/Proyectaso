@@ -1,4 +1,4 @@
-// MODIFICADO 13/7/2018 AGREGAR VERSION
+
 
 'use strict';
 
@@ -21,11 +21,11 @@ function registrarProfesor(paInfoProfesor){
             Canton : paInfoProfesor[6],
             Distrito : paInfoProfesor[7],
             DireccionExacta : paInfoProfesor[8],
-            GAcademico : paInfoProfesor[9],
-            Aexperiencia : paInfoProfesor[10],
-            CImpartidos : paInfoProfesor[11],
-            TipoProfesor : paInfoProfesor[12],
-            Desactivado : paInfoProfesor[13],
+           // GAcademico : paInfoProfesor[9],
+            Aexperiencia : paInfoProfesor[9],
+            // CImpartidos : paInfoProfesor[11],
+            TipoProfesor : paInfoProfesor[10],
+            Desactivado : paInfoProfesor[11],
             Contrasenna: contrasennaAutogenerada,
         }
       });

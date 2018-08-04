@@ -1,0 +1,51 @@
+<div class="wrapper">
+
+
+    <h3 class="titulo-lista">Cursos Impartidos</h3>
+
+    <form action="">
+      <div class=" field filtro">
+        <input type="text" name="inputBusqueda" id="inputBusqueda" placeholder="Busqueda">
+        <label for="inputBusqueda"><i class="fas fa-search"></i>  Búsqueda</label>
+      </div>
+    </form>
+
+    <div class="wrapper-listar estudproy">
+      <table id="tblCursosI">
+        <thead class="encabezados">
+            <th>Codigo</th>
+            <th>Curso</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+      </table>
+    </div>
+
+
+    <h3 class="titulo-lista">Cursos Impartidos por el Profesor</h3>
+    
+    <div class="wrapper-listar estudproy">
+      
+
+      
+      <table id="tblEstudiantesAsignados">
+        <thead class="encabezados">
+            <th>Codigo</th>
+            <th>Títulos</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script>
+      $(document).ready(function () {
+        ProfesorAsignarCursoIInit ();
+      });
+  </script>

@@ -1,6 +1,6 @@
 'use strict';
 let mongoose = require('mongoose');
-// MODIFICADO 13/7/2018 AGREGAR VERSION
+
 let ProfesorSchema = new mongoose.Schema({
 
     Nombre : {type : String, required : true},
@@ -15,14 +15,31 @@ let ProfesorSchema = new mongoose.Schema({
     DireccionExacta : {type : String, required: true},
 
 
-    GAcademico :  {type : String, required : true},
+
+    GAcademico: [
+        {
+            codigoTituloAcademico : {type : Number},
+            nombreTituloAcademico: { type: String}
+        }
+    ],
+
     Aexperiencia : {type : Number, required : true},
-    CImpartidos :  {type : String, required : true},
+
+    CImpartidos: [
+        {
+            codigoCursoI : {type : Number},
+            nombreCursoI: { type: String}
+        }
+    ],   
+
 
     TipoProfesor : {type : String, required : true},
     Desactivado : {type : Boolean, required : true}, 
     Contrasenna : {type: String, required: true},
-    TipoUsuario: {type: Number, required: true}
+
+    TipoUsuario: {type: Number, required: true},
+
+    FotoPerfilProfesor: { type: String }
 
     
 });

@@ -1,43 +1,117 @@
 'use strict';
 
-let inputNombreProfesor;
-let inputApellidoProfesor;
-let inputCedulaProfesor;
-let inputTelefonoProfesor;
-let inputCorreoProfesor;
-let inputProvinciaProfesor;
-let inputCantonProfesor;
-let inputDistritoProfesor;
-let inputDireccionExactaProfesor;
-let inputGAcademicoProfesor;
-let inputAExperienciaProfesor;
-let inputCImpartidosProfesor;
-let inputTipoProfesor; //Como obtener los datos de un selection #txtTipoProfesor
+const btnEditarProyecto = document.querySelector('#btnEditar');
+const btnGuardarProyecto = document.querySelector('#btnGuardar');
 
-function ProfesorRegistrarInit () {
-    let botonRegistrar = document.querySelector('#btnRegistrarProfesor');
+const btnVerGradoAcademico = document.querySelector('#btnVerGradoAcademico');
+const btnVerCursosImpartidos = document.querySelector('#btnVerCursosImpartidos');
 
-    if (botonRegistrar != undefined) {
-        botonRegistrar.addEventListener('click', obtenerDatosProfesor);
-    }    
-    
-    inputNombreProfesor = document.querySelector('#txtNombreProfesor');
-    inputApellidoProfesor = document.querySelector('#txtApellidoProfesor');
-    inputCedulaProfesor = document.querySelector('#txtCedulaProfesor');
-    inputTelefonoProfesor = document.querySelector('#txtTelefonoProfesor');
-    inputCorreoProfesor = document.querySelector('#txtCorreoProfesor');
-    
-    inputProvinciaProfesor = document.querySelector('#txtProvinciaProfesor');
-    inputCantonProfesor = document.querySelector('#txtCantonProfesor');
-    inputDistritoProfesor = document.querySelector('#txtDistritoProfesor');
-    inputDireccionExactaProfesor = document.querySelector('#txtDireccionExactaProfesor');
-    
-    //inputGAcademicoProfesor = document.querySelector('#txtGAcademico');
-    inputAExperienciaProfesor = document.querySelector('#txtAexperiencia');
-    //inputCImpartidosProfesor = document.querySelector('#txtCImpartidos');
 
-    inputTipoProfesor =  document.querySelector('#txtTipoProfesor'); //Como obtener los datos de un selection #txtTipoProfesor
+const inputNombreProfesor = document.querySelector('#txtNombreProfesor');
+const inputApellidoProfesor = document.querySelector('#txtApellidoProfesor');
+const inputCedulaProfesor = document.querySelector('#txtCedulaProfesor');
+const inputTelefonoProfesor = document.querySelector('#txtTelefonoProfesor');
+const inputCorreoProfesor = document.querySelector('#txtCorreoProfesor');
+
+const inputProvinciaProfesor = document.querySelector('#txtProvinciaProfesor');
+const inputCantonProfesor = document.querySelector('#txtCantonProfesor');
+const inputDistritoProfesor = document.querySelector('#txtDistritoProfesor');
+const inputDireccionExactaProfesor = document.querySelector('#txtDireccionExactaProfesor');
+
+const inputAExperienciaProfesor = document.querySelector('#txtAexperiencia');
+const inputTipoProfesor = document.querySelector('#txtTipoProfesor');
+const inputContrasennaProfesor = document.querySelector('#txtContrasenna');
+
+
+
+
+function obtenerIdProfesor() {
+    let paginaUrl = window.location.href;
+    let locacion = paginaUrl.lastIndexOf("?") + 3;
+    let id = paginaUrl.slice(locacion,paginaUrl.lenght); 
+ 
+    return id;
+ }; 
+
+function ProfesorMostrarInit () {
+    let idProfesor = obtenerIdProfesor();
+    ftnMostrarProfesor(idProfesor);
+    ftnDeshabilitarCampos();
+
+    let botonVerTitulo = document.querySelector('#btnVerGradoAcademico');
+    botonVerTitulo.addEventListener('click', ftnAsignarTitulo);
+
+    let botonVerCursosI = document.querySelector('#btnVerCursosImpartidos');
+    botonVerCursosI.addEventListener('click', ftnAsignarCursosI);
+  
 }
+
+function ftnAsignarTitulo(){
+	let id = obtenerIdProfesor();
+    // ojo con el path
+    window.location.replace('./profesor_asignar_titulos.html?id' + id );
+};
+
+function ftnAsignarCursosI(){
+	let id = obtenerIdProfesor();
+    // ojo con el path
+    window.location.replace('./profesor_asignar_cursosI.html?id' + id );
+};
+
+
+function ftnMostrarProyecto (idProfesor){
+
+    let profesorSeleccionado = null;
+
+
+    proyectos.forEach(element => {
+        if (element._id == idProfesor) {
+            profesorSeleccionado = element;
+        }
+    });
+
+    inputNombreProfesor.value = profesorSeleccionado.Nombre;
+    inputApellidoProfesor.value = profesorSeleccionado.Apellido;
+    inputCedulaProfesor.value = profesorSeleccionado.Cedula;
+    inputTelefonoProfesor.value = profesorSeleccionado.Telefono;
+    inputCorreoProfesor.value = profesorSeleccionado.Correo;
+
+    inputProvinciaProfesor.value = profesorSeleccionado.Provincia;
+    inputCantonProfesor.value = profesorSeleccionado.Canton;
+    inputDistritoProfesor.value = profesorSeleccionado.Distrito;
+    inputDireccionExactaProfesor.value = profesorSeleccionado.DireccionExacta;
+
+    inputAExperienciaProfesor.value = profesorSeleccionado.Aexperiencia;
+    inputTipoProfesor.value = profesorSeleccionado.TipoProfesor;
+    inputContrasennaProfesor.value = profesorSeleccionado.Contrasenna;
+
+// Revisar esto
+    let imagen = document.createElement('img');
+    imagen.src = profesorSeleccionado.FotoPerfilProfesor;
+    imagen.classList.add('imageSettings');
+
+   
+};
+
+function ftnDeshabilitarCampos (){
+
+    inputNombreProfesor.setAttribute('disabled',true);
+    inputApellidoProfesor.setAttribute('disabled',true);
+    inputCedulaProfesor.setAttribute('disabled',true);
+    inputTelefonoProfesor.setAttribute('disabled',true);
+    inputCorreoProfesor.setAttribute('disabled',true);
+
+    inputProvinciaProfesor.setAttribute('disabled',true);
+    inputCantonProfesor.setAttribute('disabled',true);
+    inputDistritoProfesor.setAttribute('disabled',true);
+    inputDireccionExactaProfesor.setAttribute('disabled',true);
+
+    inputAExperienciaProfesor.setAttribute('disabled',true);
+    inputTipoProfesor.setAttribute('disabled',true);
+    inputContrasennaProfesor.setAttribute('disabled',true);
+
+};
+
 
 function obtenerDatosProfesor() {
 
@@ -55,9 +129,9 @@ function obtenerDatosProfesor() {
     let sDistrito = inputDistritoProfesor.value;
     let sDireccionExacta = inputDireccionExactaProfesor.value;
 
-   // let sGAcademico = inputGAcademicoProfesor.value;
+
     let sAexperiencia = Number(inputAExperienciaProfesor.value);
-    // let sCImpartidos = inputCImpartidosProfesor.value;
+
     let sTipoProfesor = inputTipoProfesor.value;
     let sDesactivado = false;
 
@@ -83,7 +157,8 @@ function obtenerDatosProfesor() {
             confirmButtonText: 'Entendido'
         }).then(
             function(){
-                obtenerPagina ('profesor/profesor_listar.html');
+                //Revisar no redireciona el path
+                obtenerPagina ('profesor/profesor_mostrar');
             }
         );
         limpiarFormulario();
@@ -91,30 +166,6 @@ function obtenerDatosProfesor() {
 
 }
 
-function imprimirListaProfesores() {
-    let listaProfesores = obtenerListaProfesores();
-    let tbody = document.querySelector('#tblProfesor tbody');
-    tbody.innerHTML = '';
-
-    for (let i = 0; i < lista.length; i++) {
-        let fila = tbody.insertRow();
-
-        let cNombre = fila.insertCell();
-        let cApellido = fila.insertCell();
-        let cTelefono = fila.insertCell();
-        let cCorreo = fila.insertCell();
-        let cGAcademico = fila.insertCell();
-
-        cNombre.innerHTML = listaProfesores[i]['Nombre'];
-        cApellido.innerHTML = listaProfesores[i]['Apellido'];
-        cTelefono.innerHTML = listaProfesores[i]['Telefono'];
-        cCorreo.innerHTML = listaProfesores[i]['Correo'];
-        // Revisar si se puede poner varios.
-        //cGAcademico.innerHTML = listaProfesores[i]['GAcademico'];
-
-    }
-
-};
 
 
 function validarProfesor() {
@@ -201,16 +252,6 @@ function validarProfesor() {
     }
 
 
-
-/* 
-    //Validación del Grado Academico
-    if (inputGAcademicoProfesor.value == '') {
-        inputGAcademicoProfesor.classList.add('error-input');
-        bError = true;
-    } else {
-        inputGAcademicoProfesor.classList.remove('error-input');
-    } */
-
     //Validación del Años de Experiencia
     // Ponerle Validacion de Numeros || (regexSoloNumeros.test(inputTelefonoProfesor.value) == false)
 
@@ -220,15 +261,6 @@ function validarProfesor() {
     } else {
         inputAExperienciaProfesor.classList.remove('error-input');
     }
-
-    /*
-    //Validación de Cursos Impartidos
-    if (inputCImpartidosProfesor.value == '') {
-        inputCImpartidosProfesor.classList.add('error-input');
-        bError = true;
-    } else {
-        inputCImpartidosProfesor.classList.remove('error-input');
-    } */
 
 
         //Validación de Tipo Profesores
@@ -258,11 +290,10 @@ function limpiarFormulario() {
     inputDistritoProfesor.value = '';
     inputDireccionExactaProfesor.value = '';
 
-    //inputGAcademicoProfesor.value = '';
+ 
     inputAExperienciaProfesor.value = '';
-    //inputCImpartidosProfesor.value = '';
+ 
 }
-
 
 
 
