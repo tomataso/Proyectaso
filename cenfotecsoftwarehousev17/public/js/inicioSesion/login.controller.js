@@ -6,6 +6,8 @@ let botonCliente;
 let botonProfesor;
 let botonProyectos;
 let botonTiquete;
+let botonVistaRegistrarCliente;
+let botonPerfil;
 
 function inicioSesionInit () {
 
@@ -26,6 +28,9 @@ function inicioSesionInit () {
     botonProfesor = document.querySelector('#btnProfesor');
     botonProyectos = document.querySelector('#btnProyectos');
     botonTiquete = document.querySelector('#btnTiquetes');
+    botonPerfil = document.querySelector('#btnPerfil');
+    botonVistaRegistrarCliente = document.querySelector('#btnVistaRegistrarCliente');
+    
 
 }
 
@@ -70,6 +75,8 @@ function redireccionarUsuario() {
             botonProfesor.classList.remove('ocultar');
             botonProyectos.classList.remove('ocultar');
             botonTiquete.classList.add('ocultar');
+            botonPerfil.classList.add('ocultar');
+
             break;
         case 1:
             // acciones de profesor
@@ -81,18 +88,21 @@ function redireccionarUsuario() {
             botonProfesor.classList.remove('ocultar');
             botonProyectos.classList.add('ocultar');
             botonTiquete.classList.add('ocultar');
+            botonPerfil.classList.add('ocultar');
             break;
         case 2:
         // acciones de cliente
-        obtenerPagina('cliente/cliente_listar.html'),
+        // obtenerPagina('cliente/cliente_listar.html'),
+        obtenerPagina('cliente/cliente_perfil.html'),
             // botonIngresarUsuario.classList.add('ocultar');  
             // botonSalirUsuario.classList.remove('ocultar'); 
+            botonVistaRegistrarCliente.classList.remove('ocultar');  
             botonEstudiante.classList.add('ocultar');
             botonCliente.classList.remove('ocultar');
             botonProfesor.classList.add('ocultar');
             botonProyectos.classList.add('ocultar');
             botonTiquete.classList.remove('ocultar');
-            
+            botonPerfil.classList.remove('ocultar');           
             break;  
         case 3:            
         // acciones de estudiante
@@ -104,6 +114,7 @@ function redireccionarUsuario() {
         botonProfesor.classList.add('ocultar');
         botonProyectos.classList.add('ocultar');
         botonTiquete.classList.add('ocultar');
+        botonPerfil.classList.add('ocultar');
 
 
             
@@ -112,6 +123,7 @@ function redireccionarUsuario() {
             break;
     }
 }
+
 
 
 

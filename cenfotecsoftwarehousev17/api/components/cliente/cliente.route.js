@@ -19,4 +19,25 @@ router.route('/buscarClientes')
         cliente.buscarCliente(req, res);
 });
 
+router.route('/desactivarCliente')
+    .post(function(req, res){
+        cliente.desactivar(req, res);
+});
+
+router.route('/buscar_usuario_id') // MODIFICAR PARTE 1
+    .post(function(req,res){
+        cliente.buscar_usuario_id(req, res); 
+});
+
+
+router.route('/actualizar_usuario') //  MODIFICAR PARTE 1
+    .post(function(req, res){
+        cliente.actualizar_usuario(req, res); 
+});
+
+router.route('/borrar_usuario') 
+    .post(function(req, res){
+        cliente.borrar_usuario(req, res);
+});
+
 module.exports = router;

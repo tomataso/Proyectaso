@@ -7,16 +7,25 @@
         <i class="fas fa-search"></i> Búsqueda</label>
     </div>
   </form>
-  <a href="#" class="buttonDash" onclick="obtenerPagina ('cliente/cliente_registrar.html')"> Registrar Cliente
+  <!-- <a href="#" class="buttonDash" onclick="obtenerPagina ('cliente/cliente_registrar.html')"> Registrar Cliente
     <i class="fas fa-user-tie"></i>
-  </a>
+  </a> -->
   <table id="tblClientes">
     <thead class="encabezados">
       <th>Empresa</th>
       <th>Nombre de Contacto</th>
       <th>Telefono de Contacto</th>
       <th>Correo Contacto</th>
-      <th>Acciones</th>
+      <th> </th>
+<!-- 
+      <div class="buttonContainer">
+      <button type="button" id="btnEditarCliente" class="btn-registrar">Editar</button>
+    </div>
+
+    <div class="buttonContainer">
+      <button type="button" id="btnGuardarCliente" class="btn-registrar">Guardar</button>
+    </div> -->
+     
     </thead>
     <tbody>
     </tbody>
@@ -26,5 +35,9 @@
   $(document).ready(function () {
     initClientes();
     ListarClientes();
+    ClienteRegistrarInit();
+    imprimirListaClientes();
+
+
   });
 </script>

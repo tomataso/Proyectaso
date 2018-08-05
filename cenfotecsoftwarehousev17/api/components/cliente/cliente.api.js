@@ -43,3 +43,25 @@ module.exports.buscarCliente = function(req, res){
             res.send(cliente);
         });
 };
+
+module.exports.buscar_usuario_id = function (req,res){
+    clienteModel.findById({_id: req.body.id}).then(
+        function(usuario){
+            res.send(usuario);
+        }
+
+    );
+
+};
+
+module.exports.actualizar_usuario = function (req,res){
+    clienteModel.findByIdAndUpdate(req.body._id/*este id tiene que coincidir en postman, con o sin _*/, { $set: req.body},
+    function (err, user) {
+        if (err) {
+            res.json({ success: false, msg: 'No se ha actualizado.' + handleError(err) });
+
+        } else {
+            res.json({ success: true, msg: 'Se ha actualizado correctamente.' + res });
+        }
+    });
+};
