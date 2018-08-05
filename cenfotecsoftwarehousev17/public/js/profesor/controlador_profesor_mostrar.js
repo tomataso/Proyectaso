@@ -49,13 +49,15 @@ function ProfesorMostrarInit () {
 function ftnAsignarTitulo(){
 	let id = obtenerIdProfesor();
     // ojo con el path
-    window.location.replace('./profesor_asignar_titulos.html?id' + id );
+    //window.location.replace('./profesor_asignar_titulos.html?id' + id );
+    obtenerPagina('profesor/profesor_asignar_titulos.htmlid' + id);
 };
 
 function ftnAsignarCursosI(){
 	let id = obtenerIdProfesor();
     // ojo con el path
-    window.location.replace('./profesor_asignar_cursosI.html?id' + id );
+   // window.location.replace('./profesor_asignar_cursosI.html?id' + id );
+   obtenerPagina('profesor/profesor_asignar_cursosI.html?id' + id );
 };
 
 
