@@ -91,6 +91,41 @@ function registrarCliente(pCliente){
       return respuesta;
 }
 
+function actualizarCliente(pCliente){
+    let respuesta = '';
+    // let contrasennaAutogenerada = ftnGeneradorContrasenna();
+    let peticion = $.ajax({
+        url : 'http://localhost:4000/api/actualizar_cliente',
+        type : 'post',
+        contentType : 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async : false,
+        data:{
+            Nombre : pCliente[0],
+            Cedula : pCliente[1],
+            Provincia : pCliente[2],
+            Distrito : pCliente[3],
+            Canton : pCliente[4],
+            PrimerNombre : pCliente[5],
+            PrimerApellido : pCliente[6],
+            Telefono : pCliente[7],
+            Correo : pCliente[8],
+            Ubicacion : pCliente[9], 
+            _id : pCliente[10],
+        }
+      });
+    
+      peticion.done(function(response){
+       respuesta = response;
+      });
+    
+      peticion.fail(function(response){
+       
+      });
+
+      return respuesta;
+}
+
 function ftnGeneradorContrasenna() {
 
     let length = 5,

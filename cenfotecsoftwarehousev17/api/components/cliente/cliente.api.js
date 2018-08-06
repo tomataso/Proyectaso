@@ -54,7 +54,7 @@ module.exports.buscar_usuario_id = function (req,res){
 
 };
 
-module.exports.actualizar_usuario = function (req,res){
+module.exports.actualizar_cliente = function (req,res){
     clienteModel.findByIdAndUpdate(req.body._id/*este id tiene que coincidir en postman, con o sin _*/, { $set: req.body},
     function (err, user) {
         if (err) {

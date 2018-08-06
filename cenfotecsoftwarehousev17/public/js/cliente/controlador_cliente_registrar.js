@@ -12,7 +12,10 @@ let inputCorreo;
 let inputUbicacion;
 let desactivar;
 let inputId;
+let idClientePorActualizar;
 let idPersonaSeleccionada;
+
+
 
 
 ClienteRegistrarInit();
@@ -126,12 +129,11 @@ function obtenerDatosCliente(){
 }
 
 
-
-function obtenerDatosEditar(){
-
+function actualizarDatosCliente(){
     let infoCliente =[];
     let bError = false;
 
+    let idCliente = idClientePorActualizar;
     let sNombreCliente = inputNombreCliente.value;
     let sCedula = Number(inputCedulaCliente.value);
     let sProvincia = inputProvincia.value;
@@ -142,47 +144,36 @@ function obtenerDatosEditar(){
     let sTelefono = Number(inputTelefonoCliente.value);
     let sCorreo = inputCorreo.value;
     let sUbicacion = marker.getPosition().lat() + ',' + marker.getPosition().lng();
-    let _id = inputId.value;
 
-    // infoCliente.push(_id, sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
+    infoCliente.push(sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idCliente);
     
-    //bError = validar();
+    bError = validar();
     if(bError == true){
         swal({
             type : 'warning',
-            title : 'No se pudo registrar el usuario',
-            text: 'Por favor revise los campos en rojo',
+            title : 'No se pudo actualizar el cliente',
+            /*text: 'Por favor revise los campos en rojo',*/
             confirmButtonText : 'Entendido'
         });
+        
         console.log('No se pudo registrar el usuario');
     }else{
-        actualizarPersona(infoCliente);
-        // console.log(); //console.log(imagenUrl);
-        editarCliente(idPersonaSeleccionada, sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
-
-        if (resultado == true){
-            swal({
-                type : 'success',
-                title : 'Registro exitoso',
-                text: 'El usuario se registró adecuadamente',
-                confirmButtonText : 'Entendido'
-            })
-            .then(
-                function(){
-                    obtenerPagina ('cliente/cliente_listar.html');
-                    //window.location.href = "../../html/estudiante/indexTablaEstud.html"
-                }
-            );
-    
-           }
-        listaClientes = obtenerListaClientes();
-        imprimirListaClientes();
+        actualizarCliente(infoCliente);
+        swal({
+            type : 'success',
+            title : 'Actualización exitosa',
+            text: 'La información del cliente ha sido actualizada',
+            confirmButtonText : 'Entendido'
+        }).then(
+            function(){
+                obtenerPagina ('cliente/cliente_listar.html');
+                // window.location.href = "../../html/cliente/cliente_listar.html"
+            }
+        );
         limpiarFormulario();
-        botonActualizar.hidden = true;
-        botonRegistrar.hidden = false;
     }
     
-};
+}
 
 function validar(){
     let bError = false;
@@ -352,27 +343,34 @@ function imprimirListaClientes() {
 
 function llenarDatosFormulario(){ //**** V I S T O *****  es la de buscar_por_id
         
-    let botonRegistrar = document.querySelector('#btnRegistrarCliente');
-    let botonActualizarCliente = document.querySelector('#btnActualizarCliente');
+
+
    
     idPersonaSeleccionada = this.dataset._id;
 
     let usuario = obtenerPersonaPorId(idPersonaSeleccionada);
 
-    if (botonRegistrar != undefined) {
-        botonRegistrar.hidden = true;
-    }
 
-    if (botonActualizarCliente != undefined) {
-        botonActualizarCliente.hidden = false;
-    }
 
 // ajax obtenerPaginaRegistro
     // obtenerPagina ('estudiante/indexRegEstud.html');
     obtenerPagina('cliente/cliente_mostrar.html');
+
+
     
     setTimeout(function (){
 
+        let botonRegistrar = document.querySelector('#btnGuardarCliente');
+        let botonActualizarCliente = document.querySelector('#btnActualizarCliente');
+
+        if (botonRegistrar != undefined) {
+            botonRegistrar.hidden = true;
+        }
+    
+        if (botonActualizarCliente != undefined) {
+            botonActualizarCliente.hidden = false;
+            botonActualizarCliente.addEventListener('click', actualizarDatosCliente);
+        }
         inputNombreCliente.value =  usuario.Nombre;
         inputCedulaCliente.value =  usuario.Cedula;
         inputProvincia.value =  usuario.Provincia;
@@ -386,7 +384,7 @@ function llenarDatosFormulario(){ //**** V I S T O *****  es la de buscar_por_id
         
             
         // imagen.src = usuario['foto']; //es un elemento tipo img, por eso es con src y no con value
-        inputId.value =  usuario['_id'];
+        idClientePorActualizar =  usuario._id;
       
       }, 100);
     

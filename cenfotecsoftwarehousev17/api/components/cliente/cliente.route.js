@@ -30,9 +30,9 @@ router.route('/buscar_usuario_id') // MODIFICAR PARTE 1
 });
 
 
-router.route('/actualizar_usuario') //  MODIFICAR PARTE 1
+router.route('/actualizar_cliente') //  MODIFICAR PARTE 1
     .post(function(req, res){
-        cliente.actualizar_usuario(req, res); 
+        cliente.actualizar_cliente(req, res); 
 });
 
 router.route('/borrar_usuario') 
