@@ -125,6 +125,8 @@ function obtenerDatosCliente(){
     
 }
 
+
+
 function obtenerDatosEditar(){
 
     let infoCliente =[];

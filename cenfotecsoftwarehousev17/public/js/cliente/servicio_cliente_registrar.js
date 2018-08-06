@@ -1,5 +1,30 @@
 'use strict';
 
+function actualizarEstadoCliente(pCliente, estado) {
+    let respuesta = '';
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/cambiar_estado_cliente',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: {
+            _id: pCliente._id,
+            Desactivado: estado,
+        }
+    });
+
+    peticion.done(function (response) {
+        console.log('Registro bien');
+        respuesta = response;
+    });
+
+    peticion.fail(function (response) {
+        console.log('Registro mal');
+    });
+
+    return respuesta;
+}
 
 /*Sobre Registro Cliente*/
 function obtenerListaClientes(){

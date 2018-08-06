@@ -25,28 +25,60 @@ function ListarClientes(){
             let celdaNombreContacto = fila.insertCell();
             let celdaTelefonoContacto = fila.insertCell();
             let celdaCorreoContacto = fila.insertCell();
+            let celdaEstado = fila.insertCell();// copiar esto
             let cConfiguracion = fila.insertCell();
 
             celdaNombreEmpresa.innerHTML = ListaCliente[i]['Nombre'];
             celdaNombreContacto.innerHTML = ListaCliente[i]['PrimerNombre'] + " " + ListaCliente[i]['PrimerApellido']  ;
             celdaTelefonoContacto.innerHTML = ListaCliente[i]['Telefono'];
             celdaCorreoContacto.innerHTML = ListaCliente[i]['Correo'];
+
+            // validación para mostrar el estado del usuario en la tabla. Copiar esto
+            if (ListaCliente[i]['Desactivado'] == true) {
+                celdaEstado.innerHTML = "Activo";
+            } else if(ListaCliente[i]['Desactivado'] == false) {
+                celdaEstado.innerHTML = "Inactivo";
+            }
            
 
             //Íconos para editar
             let aModificar = document.createElement('a'); // * * * agregar todos estos * * *
             aModificar.classList.add('fas');
             aModificar.classList.add('fa-eye');
-            aModificar.dataset._id =  ListaCliente[i]['_id'];
+            aModificar.dataset._id =  ListaCliente[i]['_id']; 
+
+            // modificar estado del cliente. Copiar esto
+            let btnModificarEstado = document.createElement('button'); 
+            btnModificarEstado.dataset._id =  ListaCliente[i]['_id']; 
+
+            // validación para mostrar el nombre del botón según el estado de usuario. Copiar esto
+            if (ListaCliente[i]['Desactivado'] == true) {
+                btnModificarEstado.innerHTML = 'Inactivar';
+            } else if(ListaCliente[i]['Desactivado'] == false) {
+                btnModificarEstado.innerHTML = 'Activar';
+            }
+            
+            // llamado para la función modificar estado del cliente. Copiar esto
+            btnModificarEstado.addEventListener('click', function(){
+                let estado = ListaCliente[i]['Desactivado'];
+                if(estado == true ){
+                    estado = false;
+                }else if(estado == false){
+                    estado = true;
+                }
+                actualizarEstadoCliente(ListaCliente[i], estado);
+                ListarClientes();
+            });
 
             let aBorrar = document.createElement('a');
             aBorrar.classList.add('fas');
-            aBorrar.classList.add('fa-trash');
+            aBorrar.classList.add('fa-trash'); 
             aBorrar.dataset._id =  ListaCliente[i]['_id'];
 
             aModificar.addEventListener('click', ftnMostrarCliente); //funcion buscar_por_idß
             aBorrar.addEventListener('click', ftnEliminarCliente);
 
+            cConfiguracion.appendChild(btnModificarEstado);
             cConfiguracion.appendChild(aModificar);
             cConfiguracion.appendChild(aBorrar);
 

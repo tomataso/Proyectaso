@@ -40,4 +40,9 @@ router.route('/borrar_usuario')
         cliente.borrar_usuario(req, res);
 });
 
+router.route('/cambiar_estado_cliente')
+    .post(function (req, res) {
+        cliente.cambiar_estado_cliente(req, res);
+    });
+
 module.exports = router;

@@ -65,3 +65,15 @@ module.exports.actualizar_usuario = function (req,res){
         }
     });
 };
+
+module.exports.cambiar_estado_cliente = function(req, res){
+    clienteModel.findByIdAndUpdate(req.body._id, { $set: req.body }, 
+        function(err, cliente) {
+            if (err) {
+                res.json({ success: false, msg: 'No se ha actualizado.'+ handleError(err)});
+        
+            } else {
+            res.json({ success: true, msg: 'Se ha actualizado correctamente.' + res });
+            }
+      });
+};
