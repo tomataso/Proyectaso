@@ -75,7 +75,7 @@ function ListarClientes(){
             aBorrar.classList.add('fa-trash'); 
             aBorrar.dataset._id =  ListaCliente[i]['_id'];
 
-            aModificar.addEventListener('click', ftnMostrarCliente); //funcion buscar_por_idß
+            aModificar.addEventListener('click', llenarDatosFormulario); //funcion buscar_por_idß
             aBorrar.addEventListener('click', ftnEliminarCliente);
 
             cConfiguracion.appendChild(btnModificarEstado);
@@ -155,63 +155,6 @@ function  ftnFiltrarListaClientes (){
     }
 
    
-};
-
-function llenarDatosFormulario(){ //**** V I S T O *****  es la de buscar_por_id
-        
-    let botonRegistrar = document.querySelector('#btnRegistrarCliente');
-    // let botonActualizarCliente = document.querySelector('#btnActualizarCliente');
-    // botonRegEstud.hidden = true;
-    // botonActualizarEstudiante.hidden = false;
-
-    if (botonRegistrar != undefined) {
-        botonRegistrar.hidden = true;
-    }
-
-    // if (botonActualizarCliente != undefined) {
-    //     botonActualizarCliente.hidden = false;
-    // }
-
-    //Blinding    
-    let _id =  this.dataset._id;// se obtiene el id del usuario seleccionado
-    let usuario = obtenerPersonaPorId(_id); // * * * funcion obtenerPersonaPorId se debe crear en el servicio, porque va a ser la petición 
-//if usuario is not null
-// ajax obtenerPaginaRegistro
-    // obtenerPagina ('estudiante/indexRegEstud.html');
-    obtenerPagina ('cliente/cliente_mostrar.html');
-    
-    setTimeout(function (){
-
-        inputNombre.value =  usuario['Nombre'];
-        inputApellido.value = usuario['Apellido'];
-        inputDireccion.value = usuario['Direccion'];
-        inputTelefono.value = usuario['Telefono'];
-        inputEmail.value = usuario['Correo'];
-        inputCedula.value = usuario['Cedula'];
-        inputCarrera.value = usuario['Carrera'];
-        inputMaterias.value = usuario['Materias'];
-        inputEmergNombre.value = usuario['NombreEmergencia'];
-        inputEmergApellido.value = usuario['ApellidoEmergencia'];
-        inputEmergTelefono.value = usuario['TelefonoEmergencia'];   
-        // nunca se muestra la contraseña
-
-        inputNombreCliente.value =  usuario['NombreCliente'];;
-        inputCedulaCliente.value =  usuario['CedulaCliente'];;
-        inputProvincia.value =  usuario['Provincia'];;
-        inputCanton.value =  usuario['Canton'];;
-        inputDistrito.value =  usuario['Distrito'];;
-        inputPrimerNombre.value =  usuario['PrimerNombre'];;
-        inputPrimerApellido.value =  usuario['PrimerApellido'];;
-        inputTelefonoCliente.value =  usuario['TelefonoCliente'];;
-        inputCorreo.value =  usuario['Correo'];;
-        inputUbicacion.value =  usuario['Ubicacion'];;
-        
-            
-        // imagen.src = usuario['foto']; //es un elemento tipo img, por eso es con src y no con value
-        inputId.value =  usuario['_id'];
-      
-      }, 100);
-    
 };
 
 function buscar_por_id(){

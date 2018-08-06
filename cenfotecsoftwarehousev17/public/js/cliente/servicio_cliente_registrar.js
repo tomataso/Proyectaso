@@ -104,32 +104,6 @@ function ftnGeneradorContrasenna() {
 
 // VIDEOS PABS
 
-function obtenerPersonaPorId(pid){  //pid: parametro id
-    let usuario = '';
-    let peticion = $.ajax({
-        url : 'http://localhost:4000/api/buscar_usuario_id', // url lo copio del route
-        type : 'post',
-        contentType : 'application/x-www-form-urlencoded; charset=utf-8',
-        dataType : 'json',
-        async : false,
-        data:{ //asegurarme de que en el user.api.js este con el guion _
-            _id : pid
-        }
-      });
-    
-      peticion.done(function(response){
-        usuario = response;
-        
-      });
-    
-      peticion.fail(function(response){
-      });
-
-      
-      
-      return usuario;
-};
-
 
 function actualizarPersona(pCliente){
     let respuesta = '';

@@ -8,6 +8,7 @@ let botonProyectos;
 let botonTiquete;
 let botonVistaRegistrarCliente;
 let botonPerfil;
+let botonListaTiquete;
 
 function inicioSesionInit () {
 
@@ -30,6 +31,7 @@ function inicioSesionInit () {
     botonTiquete = document.querySelector('#btnTiquetes');
     botonPerfil = document.querySelector('#btnPerfil');
     botonVistaRegistrarCliente = document.querySelector('#btnVistaRegistrarCliente');
+    botonListaTiquete = document.querySelector('#btnListaTiquete');
     
 
 }
@@ -102,19 +104,20 @@ function redireccionarUsuario() {
             botonProfesor.classList.add('ocultar');
             botonProyectos.classList.add('ocultar');
             botonTiquete.classList.remove('ocultar');
-            botonPerfil.classList.remove('ocultar');           
+            botonPerfil.classList.remove('ocultar');    
+            botonListaTiquete.classList.remove('ocultar');       
             break;  
         case 3:            
         // acciones de estudiante
         obtenerPagina('estudiante/indexTablaEstud.html'),
-        // botonIngresarUsuario.classList.add('ocultar');  
-        // botonSalirUsuario.classList.remove('ocultar'); 
-        botonEstudiante.classList.remove('ocultar');
-        botonCliente.classList.add('ocultar');
-        botonProfesor.classList.add('ocultar');
-        botonProyectos.classList.add('ocultar');
-        botonTiquete.classList.add('ocultar');
-        botonPerfil.classList.add('ocultar');
+            // botonIngresarUsuario.classList.add('ocultar');  
+            // botonSalirUsuario.classList.remove('ocultar'); 
+            botonEstudiante.classList.remove('ocultar');
+            botonCliente.classList.add('ocultar');
+            botonProfesor.classList.add('ocultar');
+            botonProyectos.classList.add('ocultar');
+            botonTiquete.classList.add('ocultar');
+            botonPerfil.classList.add('ocultar');
 
 
             

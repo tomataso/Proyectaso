@@ -340,7 +340,7 @@ function imprimirListaClientes() {
         aBorrar.classList.add('fa-trash');
         aBorrar.dataset._id =  listaClientes[i]['_id'];
 
-        aModificar.addEventListener('click', buscar_por_id); //funcion buscar_por_idß
+        aModificar.addEventListener('click', llenarDatosFormulario); //funcion buscar_por_idß
         aBorrar.addEventListener('click', ftnEliminarCliente);
 
         cConfiguracion.appendChild(aModificar);
@@ -367,26 +367,22 @@ function llenarDatosFormulario(){ //**** V I S T O *****  es la de buscar_por_id
         botonActualizarCliente.hidden = false;
     }
 
-    //Blinding    
-    let _id =  this.dataset._id;// se obtiene el id del usuario seleccionado
-    let usuario = obtenerPersonaPorId(_id); // * * * funcion obtenerPersonaPorId se debe crear en el servicio, porque va a ser la petición 
-//if usuario is not null
 // ajax obtenerPaginaRegistro
     // obtenerPagina ('estudiante/indexRegEstud.html');
-    obtenerPagina ('cliente/cliente_mostrar.html');
+    obtenerPagina('cliente/cliente_mostrar.html');
     
     setTimeout(function (){
 
-        inputNombreCliente.value =  usuario['NombreCliente'];;
-        inputCedulaCliente.value =  usuario['CedulaCliente'];;
-        inputProvincia.value =  usuario['Provincia'];;
-        inputCanton.value =  usuario['Canton'];;
-        inputDistrito.value =  usuario['Distrito'];;
-        inputPrimerNombre.value =  usuario['PrimerNombre'];;
-        inputPrimerApellido.value =  usuario['PrimerApellido'];;
-        inputTelefonoCliente.value =  usuario['TelefonoCliente'];;
-        inputCorreo.value =  usuario['Correo'];;
-        inputUbicacion.value =  usuario['Ubicacion'];;
+        inputNombreCliente.value =  usuario.Nombre;
+        inputCedulaCliente.value =  usuario.Cedula;
+        inputProvincia.value =  usuario.Provincia;
+        inputCanton.value =  usuario.Canton;
+        inputDistrito.value =  usuario.Distrito;
+        inputPrimerNombre.value =  usuario.PrimerNombre
+        inputPrimerApellido.value =  usuario.PrimerApellido;
+        inputTelefonoCliente.value =  usuario.Telefono;
+        inputCorreo.value =  usuario.Correo;
+        //inputUbicacion.value =  usuario['Ubicacion'];
         
             
         // imagen.src = usuario['foto']; //es un elemento tipo img, por eso es con src y no con value

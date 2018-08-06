@@ -45,7 +45,7 @@ module.exports.buscarCliente = function(req, res){
 };
 
 module.exports.buscar_usuario_id = function (req,res){
-    clienteModel.findById({_id: req.body.id}).then(
+    clienteModel.findById({_id: req.body._id}).then(
         function(usuario){
             res.send(usuario);
         }
