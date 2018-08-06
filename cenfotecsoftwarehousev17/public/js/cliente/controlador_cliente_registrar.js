@@ -96,7 +96,7 @@ function obtenerDatosCliente(){
     let sPrimerApellido = inputPrimerApellido.value;
     let sTelefono = Number(inputTelefonoCliente.value);
     let sCorreo = inputCorreo.value;
-    let sUbicacion = marker.getPosition().lat() + ',' + marker.getPosition().lng();
+    let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
     infoCliente.push(sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
     
@@ -143,7 +143,7 @@ function actualizarDatosCliente(){
     let sPrimerApellido = inputPrimerApellido.value;
     let sTelefono = Number(inputTelefonoCliente.value);
     let sCorreo = inputCorreo.value;
-    let sUbicacion = marker.getPosition().lat() + ',' + marker.getPosition().lng();
+    let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
     infoCliente.push(sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idCliente);
     
@@ -381,7 +381,9 @@ function llenarDatosFormulario(){ //**** V I S T O *****  es la de buscar_por_id
         inputTelefonoCliente.value =  usuario.Telefono;
         inputCorreo.value =  usuario.Correo;
         //inputUbicacion.value =  usuario['Ubicacion'];
-        
+        // console.log(usuario.Ubicacion);
+        let cordenadasMapa = JSON.parse(usuario.Ubicacion);
+        showMapForUpdate(cordenadasMapa.latitud, cordenadasMapa.longitud);
             
         // imagen.src = usuario['foto']; //es un elemento tipo img, por eso es con src y no con value
         idClientePorActualizar =  usuario._id;
