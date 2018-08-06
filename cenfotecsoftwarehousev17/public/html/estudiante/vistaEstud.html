@@ -1,9 +1,16 @@
 <div class="wrapper">
   <main>
-      <h3 class="titulo-lista">Registro de Estudiantes</h3>
+      <h3 class="titulo-lista">Estudiante</h3>
+      <form action="">
+        <div class="field">
+          <input type="text" id="txtId" hidden>
+          <input type="text" name="txtNombrePersonalUsuario" id="txtNombrePersonalUsuario" placeholder="Usuario"> <!-- en este input va el value del nombre del estudiante (txtNombre & txtApellido)-->
+          <label for="txtNombrePersonalUsuario">Usuario</label>
+        </div>
+      </form>
     <form action="">
       <div class="field">
-        <input type="text" id="txtId" hidden>
+        <!-- <input type="text" id="txtId" hidden> -->
         <input type="text" name="txtNombre" id="txtNombre" placeholder="Primer nombre">
         <label for="txtNombre">Primer nombre</label>
       </div>
@@ -47,35 +54,18 @@
         <input type="tel" name="txtContactEmergTelefono" id="txtContactEmergTelefono" placeholder="+506-8888-8888">
         <label for="txtContactEmergTelefono">Teléfono contacto de Emergencia</label>
       </div>
-      <button type="button" id="btnRegEstud">Registrar</button>
-      <!-- <button type="button" id="btnActualizarEstudiante">Registrar</button> -->
+      <button type="button" id="btnActualizarEstudiante">Actualizar</button>
+      <!-- <a href="#" id="btnActualizarEstudiante" class="buttonDash" onclick="obtenerPagina ('estudiante/indexRegEstud.html')"> Actualizar
+        <i class="fas fa-user-plus"></i> -->
+      </a>
     </form>
-    <table id="tblEstud" class="ocultar">
-      <thead>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Dirección</th>
-        <th>Teléfono</th>
-        <th>Correo electrónico</th>
-        <th>Cédula</th>
-        <th>Carrera</th>
-        <th>Materias</th>
-        <th>Nombre de emergencia</th>
-        <th>Apellido de emergencia</th>
-        <th>Teléfono de emergencia</th>
-        <!-- para reservar espacio de los botones de modificar y borrar -->
-        <th>Acciones</th> 
-      </thead>
-      <tbody>
-
-      </tbody>
-    </table>
   </main>
 </div>
 
 <script>
   $(document).ready(function () {
     EstudiantesInit();
-    imprimirListaEstud()//***
+    inicioSesionInit();
+    imprimirListaEstud();
   });
 </script>

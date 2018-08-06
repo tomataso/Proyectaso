@@ -52,26 +52,21 @@
 
 					<a href="index.html" id="btnSalir" class="ocultar"><div class="link">Salir <i class="fas fa-sign-out-alt"></i></div></a> -->
 
-					<a href="#" id="btnEstudiantes" class="ocultar" onclick="obtenerPagina ('estudiante/indexTablaEstud.html') & moverContenedorPricipal()"><div class="link">Estudiantes</div></a>
+					<!-- para estudiantes -->
 
-					<a href="#" class="ocultar" id="btnCliente" onclick="obtenerPagina ('cliente/cliente_listar.html') & moverContenedorPricipal()"><div class="link">Lista Clientes</div></a>
+					<a href="#" id="btnEstudiantes" class="ocultar" onclick="obtenerPagina ('estudiante/indexTablaEstud.html') & moverContenedorPricipal()"><div class="link">Estudiantes</div></a>		
+
+					<a href="#" id="btnVistaEstudiante" class="ocultar" onclick="obtenerPagina ('estudiante/vistaEstud.html') & moverContenedorPricipal()"><div class="link">Perfil Estudiante</div></a>
+					
+					<a href="#" id="btnVistaRegistrarEstudiante" class="ocultar" onclick="obtenerPagina ('estudiante/indexRegEstud.html') & moverContenedorPricipal()"><div class="link">Registrar Estudiante</div></a>
+
+					<!-- <a href="#" id="btnVistaRegistrarEstudiante" class="buttonDash" onclick="obtenerPagina ('estudiante/indexRegEstud.html')"> Registar Estudiante <i class="fas fa-user-plus"></i> </a> -->
+
+					<a href="#" class="ocultar" id="btnCliente" onclick="obtenerPagina ('cliente/cliente_listar.html') & moverContenedorPricipal()"><div class="link">Clientes</div></a>
 
 					<a href="#" class="ocultar" id="btnProfesor" onclick="obtenerPagina ('profesor/profesor_listar.html') & moverContenedorPricipal()"><div class="link">Profesores</div></a>
 
 					<a href="#" class="ocultar" id="btnProyectos" onclick="obtenerPagina ('proyecto/proyecto_listar.html') & moverContenedorPricipal()"><div class="link">Proyectos </div></a>
-
-					<a href="#" class="ocultar" id="btnTiquetes" onclick="obtenerPagina ('tiquete/tiquete_registrar.html') & moverContenedorPricipal()"><div class="link">Registrar Tiquete</div></a>
-
-					<a href="#" class="ocultar" id="btnTiquetes" onclick="obtenerPagina ('tiquete/tiquete_listar.html') & moverContenedorPricipal()"><div class="link">Tiquetes </div></a>
-
-					<!-- <a href="#" id = "btnVistaRegistrarCliente" class="ocultar" onclick="obtenerPagina ('cliente/cliente_registrar.html')"> Registrar Cliente
-						<i class="fas fa-user-tie"></i></a> -->
-
-					<a href="#" class="ocultar" id="btnPerfil" onclick="obtenerPagina ('cliente/cliente_perfil.html') & moverContenedorPricipal()"><div class="link">Perfil </div></a>
-
-					<a href="#" id = "btnVistaRegistrarCliente" class="ocultar" onclick="obtenerPagina ('cliente/cliente_registrar.html') & moverContenedorPricipal()"><div class="link">Registrar Cliente</div></a>
-
-					<a href="#" id = "btnListaTiquete" class="ocultar" onclick="obtenerPagina ('tiquete/tiquete_listar.html') & moverContenedorPricipal()"><div class="link">Lista Tiquetes</div></a>
 
 				</nav>
 			</div>
@@ -166,19 +161,11 @@
 		<script src="../../js/estudiante/controladorRegEstud.js"></script>
 
 		<!-- para cliente -->
-		<script src="../../js/cliente/servicio_mapa.js"></script>
 		<script src="../../js/cliente/servicio_cliente_listar.js"></script>
 		<script src="../../js/cliente/controlador_cliente_listar.js"></script>
+
 		<script src="../../js/cliente/servicio_cliente_registrar.js"></script>
 		<script src="../../js/cliente/controlador_cliente_registrar.js"></script>
-		<script src="../../js/cliente/servicio_cliente_mostrar.js"></script>
-		<script src="../../js/cliente/controlador_cliente_mostrar.js"></script>
-
-		<!--para tiquetes-->
-		<script src="../../js/tiquete/servicio_tiquete_listar.js"></script>
-		<script src="../../js/tiquete/controlador_tiquete_listar.js"></script>
-		<script src="../../js/tiquete/servicio_tiquete_registrar.js"></script>
-  		<script src="../../js/tiquete/controlador_tiquete_registrar.js"></script>
 
 		<!-- del proyecto -->
 		<script src="../../js/proyecto/servicio_proyecto_listar.js"></script>
@@ -193,10 +180,6 @@
 
 		<script src="../../js/profesor/servicio_profesor_registrar.js"></script>
 		<script src="../../js/profesor/controlador_profesor_registrar.js"></script>
-
-		<script src="../../js/profesor/servicio_profesor_imagen.js"></script>
-		<script src="../../js/profesor/servicio_profesor_mostrar.js"></script>
-		<script src="../../js/profesor/controlador_profesor_mostrar.js"></script>
 
 
 		<script>

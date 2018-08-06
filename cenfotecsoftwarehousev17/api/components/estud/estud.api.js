@@ -38,6 +38,48 @@ module.exports.mostrar = function(req, res){
 
 };
 
+// * * * inicio: videos de Pabs * * * Modificar (parte 1, 2, 3), nodejs * * *
+module.exports.buscar_usuario_id = function (req, res) { 
+    estudModel.findById(req.body._id).then(        
+        function (user, err) {
+             if (err) {
+                 res.json({ success: false, msg: handleError(err) });
+             } else {
+                res.json({ success: true, usuario: user});
+            }
+        });
+};
+
+module.exports.actualizar = function (req, res) {  // modificar_usuario en lugar de actualizar    
+    estudModel.findByIdAndUpdate(req.body._id, { $set: req.body },
+        function (err, user) {
+            if (err) {
+                res.json({ success: false, msg: 'El usuario no se ha podido modificar.' + handleError(err) });
+
+            } else {
+                res.json({ success: true, msg: 'Usuario modificado correctamente.' + res });
+            }
+        });
+};
+
+module.exports.borrar = function (req, res) { // maCo: aun no he visto el video
+    estudModel.findByIdAndDelete(req.body._id,
+        function (err, user) {
+            if (err) {
+                res.json({ success: false, msg: 'No se ha borrado el usuario.' + handleError(err) });
+
+            } else {
+                res.json({ success: true, msg: 'El usuario se ha eliminado correctamente.' + res });
+            }
+        });
+};
+
+// * * * fin: videos de Pabs * * * Modificar (parte 1, 2, 3), nodejs * * *
+
+
+
+
+
 /*
 module.exports.mostrar = function(req, res){ 
 

@@ -6,17 +6,43 @@ th {
   background: #292929; 
   color: #fbb803; 
   height: 30px;
-  /* font-weight: bold;  */
+  text-align: justify;
 }
+
 td, th, tr { 
-  padding: 6px; 
+  padding: 1%; 
   border: none;
-  text-align: center; 
+  text-align: justify;
   white-space: pre-line;
   vertical-align: middle;
   width: auto;
-  
 }
+/* table td:first-child {
+	width: 100px;
+}
+ 
+table td:nth-child(2) {
+	width: 100px;
+}
+ 
+table td:nth-child(3) {
+	width: 100px;
+}
+table td:nth-child(4) {
+	width: 200px;
+}
+table td:nth-child(5) {
+	width: 100px;
+} 
+table td:nth-child(6) {
+	width: 150px;
+} 
+table td:nth-child(7) {
+	width: 100px;
+} 
+table td:last-child {
+	width: 50px;
+} */
 
 /* Estilos clases ---------------------------------------------------------------------------------------- */
 
@@ -58,6 +84,17 @@ td, th, tr {
   right: 135px;
   width: 59%;
   padding-bottom: 7%;
+}
+a.fa-trash {
+  cursor: pointer;
+  color: transparent;
+  /* color: #d83504; */
+  padding-left: 11%;
+}
+a.fa-eye {
+  /* color: #000; */
+  cursor: pointer;
+  padding-right: 11%;
 }
 
 /* Estilos pseudo clases ------------------------------------------------------------------------------------ */

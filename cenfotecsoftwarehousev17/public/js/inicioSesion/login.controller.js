@@ -2,13 +2,12 @@
 let botonIngresarUsuario;
 let botonSalirUsuario;
 let botonEstudiante;
+let botonVistaRegistrarEstudiante;
+let botonVistaEstudiante;
 let botonCliente;
 let botonProfesor;
 let botonProyectos;
-let botonTiquete;
-let botonVistaRegistrarCliente;
-let botonPerfil;
-let botonListaTiquete;
+
 
 function inicioSesionInit () {
 
@@ -24,14 +23,15 @@ function inicioSesionInit () {
     
     botonIngresarUsuario =  document.querySelector('#btnIngresar');
     botonSalirUsuario = document.querySelector('#btnSalir');
+    // para estudiantes
     botonEstudiante = document.querySelector('#btnEstudiantes');
+    botonVistaRegistrarEstudiante = document.querySelector('#btnVistaRegistrarEstudiante');
+    botonVistaEstudiante = document.querySelector('#btnVistaEstudiante');
+    // para clientes
     botonCliente = document.querySelector('#btnCliente');
-    botonProfesor = document.querySelector('#btnProfesor');
-    botonProyectos = document.querySelector('#btnProyectos');
-    botonTiquete = document.querySelector('#btnTiquetes');
-    botonPerfil = document.querySelector('#btnPerfil');
-    botonVistaRegistrarCliente = document.querySelector('#btnVistaRegistrarCliente');
-    botonListaTiquete = document.querySelector('#btnListaTiquete');
+    botonProfesor = document.querySelector('#btnProfesor');    
+    botonProyectos = document.querySelector('#btnProyectos');    
+    
     
 
 }
@@ -45,9 +45,20 @@ function getCredencialesUsuario() {
     let valido = validarCredenciales(correo, contrasenna);
 
     if (valido) {
+        swal({
+            type : 'success',
+            title : 'Bienvenido',
+            text: 'Acceso permitido',
+            confirmButtonText : 'Entendido'});
         console.log("Acceso permitido");
         redireccionarUsuario();
     } else {
+        swal({
+            type : 'warning',
+            title : 'Acceso denegado',
+            text: 'Por favor revise el usuario y/o la clave que digitó',
+            confirmButtonText : 'Entendido'
+        });
         console.log("Acceso denegado");
         document.querySelector("#btnInicioSesion").classList.remove("ocultar");
     }
@@ -70,15 +81,15 @@ function redireccionarUsuario() {
         case 0:
             // acciones de administrador            
             obtenerPagina('proyecto/proyecto_listar.html'), //seguramente lo tengo que cambiar por la vista del administrador 
+
             // botonIngresarUsuario.classList.add('ocultar');  
             // botonSalirUsuario.classList.remove('ocultar'); 
             botonEstudiante.classList.remove('ocultar');
+            botonVistaEstudiante.classList.remove('ocultar');
+            botonVistaRegistrarEstudiante.classList.remove('ocultar'); 
             botonCliente.classList.remove('ocultar');
             botonProfesor.classList.remove('ocultar');
             botonProyectos.classList.remove('ocultar');
-            botonTiquete.classList.add('ocultar');
-            botonPerfil.classList.add('ocultar');
-
             break;
         case 1:
             // acciones de profesor
@@ -86,38 +97,38 @@ function redireccionarUsuario() {
             // botonIngresarUsuario.classList.add('ocultar');  
             // botonSalirUsuario.classList.remove('ocultar'); 
             botonEstudiante.classList.add('ocultar');
+            botonVistaRegistrarEstudiante.classList.add('ocultar'); 
             botonCliente.classList.add('ocultar');
             botonProfesor.classList.remove('ocultar');
             botonProyectos.classList.add('ocultar');
-            botonTiquete.classList.add('ocultar');
-            botonPerfil.classList.add('ocultar');
+            botonVistaEstudiante.classList.add('ocultar');
             break;
         case 2:
         // acciones de cliente
-        // obtenerPagina('cliente/cliente_listar.html'),
-        obtenerPagina('cliente/cliente_perfil.html'),
+        obtenerPagina('cliente/cliente_listar.html'),
             // botonIngresarUsuario.classList.add('ocultar');  
             // botonSalirUsuario.classList.remove('ocultar'); 
-            botonVistaRegistrarCliente.classList.remove('ocultar');  
             botonEstudiante.classList.add('ocultar');
+            botonVistaRegistrarEstudiante.classList.add('ocultar'); 
             botonCliente.classList.remove('ocultar');
             botonProfesor.classList.add('ocultar');
             botonProyectos.classList.add('ocultar');
-            botonTiquete.classList.remove('ocultar');
-            botonPerfil.classList.remove('ocultar');    
-            botonListaTiquete.classList.remove('ocultar');       
+            botonVistaEstudiante.classList.add('ocultar');
+            
             break;  
         case 3:            
         // acciones de estudiante
-        obtenerPagina('estudiante/indexTablaEstud.html'),
-            // botonIngresarUsuario.classList.add('ocultar');  
-            // botonSalirUsuario.classList.remove('ocultar'); 
-            botonEstudiante.classList.remove('ocultar');
-            botonCliente.classList.add('ocultar');
-            botonProfesor.classList.add('ocultar');
-            botonProyectos.classList.add('ocultar');
-            botonTiquete.classList.add('ocultar');
-            botonPerfil.classList.add('ocultar');
+        // obtenerPagina('estudiante/indexTablaEstud.html'),
+        obtenerPagina('estudiante/vistaEstud.html'),
+
+        // botonIngresarUsuario.classList.add('ocultar');  
+        // botonSalirUsuario.classList.remove('ocultar'); 
+        botonEstudiante.classList.remove('ocultar');
+        botonVistaRegistrarEstudiante.classList.remove('ocultar'); 
+        botonCliente.classList.add('ocultar');
+        botonProfesor.classList.add('ocultar');
+        botonProyectos.classList.add('ocultar');
+        botonVistaEstudiante.classList.remove('ocultar');
 
 
             
@@ -126,7 +137,6 @@ function redireccionarUsuario() {
             break;
     }
 }
-
 
 
 
